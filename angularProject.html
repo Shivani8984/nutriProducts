@@ -6,69 +6,216 @@
     <title>PRN</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <style>
+        @font-face {
+            font-family: 'GothamBold';
+            src: url(Gotham-Bold.otf);
+            font-weight: 900;
+        }
+
+        @font-face {
+            font-family: 'GothamBook';
+            src: url(Gotham-Book.otf);
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: 'GothamMedium';
+            src: url(Gotham-Medium.otf);
+            font-weight: 400;
+        }
+
+        body {
+            font-family: 'GothamBook';
+        }
+
+        section {
+            padding: 1em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+        .blueCard {
+            border-color: #55C7F1;
+            border-radius: 0mm;
+            border-width: thick;
+        }
+        .blueCardHeader {
+            color : white !important;
+            background-color:#55C7F1 ;
+        }
+        .orangeCard {
+            border-color:#D97953;
+            border-radius: 0mm;
+            border-width: thick;
+        }
+        .orangeCardHeader {
+            color : white !important;
+            background-color: #D97953;
+        }
+        .purpleCard {
+            border-color:#A683B8;
+            border-radius: 0mm;
+            border-width: thick;
+        }
+        .purpleCardHeader {
+            color : white !important;
+            background-color:#A683B8;
+        }
+        .cyanCard {
+            border-color:#65C1AE;
+            border-radius: 0mm;
+            border-width: thick;
+        }
+        .cyanCardHeader {
+            color : white !important;
+            background-color: #65C1AE;
+        }
+
+        .pTag{
+            font-family: 'GothamBold';
+            font-size: 3rem;
+        }
+        .pName{
+            font-family: 'GothamBook';
+            font-size: 20px;
+            text-align:left;
+            text-overflow: ellipsis;
+        }
+
+        .card-body {
+            width: 45%;
+            height: 45%;
+        }
+
+        .card-text{
+            color:#07b5f5;
+            font-family: 'GothamMedium';
+            font-size: 6rem;
+        }
+
+    </style>
 </head>
 
 <body ng-app="app">
     <!-- app= module name, ng-app=directive to define the application scope-->
-    <div class="container-fluid" ng-controller="PrimaryCtrl">
-        <!--PrimaryCtrl=controller ng-controller=define the controller scope-->
-        <style>
-            @font-face {
-                font-family: 'GothamBold';
-                src: url(Gotham-Bold.otf);
-                font-weight: bold;
-            }
+    <section>
+        <div class="container-fluid" ng-controller="PrimaryCtrl">
+            <!--PrimaryCtrl=controller ng-controller=define the controller scope-->
+            <div class="row">
 
-            @font-face {
-                font-family: 'GothamBook';
-                src: url(Gotham-Book.otf);
-                font-weight: normal;
-            }
+                <div class="col">
+                    <div class="card blueCard">
+                        <div class="card-header blueCardHeader rounded-0">
+                            <div class="float-left pTag">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].tag |
+                                capitalizeWords}}</div>
+                            <div class="pName text-center">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].name |
+                                capitalizeWords}}</div>
+                        </div>
+                        <div class="card-body">
 
-            @font-face {
-                font-family: 'GothamMedium';
-                src: url(Gotham-Medium.otf);
-                font-weight: 400;
-            }
+                            <div class="media">
+                                <img class="img-fluid" src="DRY_EYE.png" alt="Dry Eye">
+                                <div class="media-body">
+                                  <h6 class="mt-0">{{ text }}</h6>
+                                  <p class="card-text">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.val}}</p>
+                                </div>
+                            </div>
 
-            body {
-                font-family: 'GothamBook';
-            }
-
-            .blue-text {
-                color: #171B60;
-            }
-        </style>
-        <h1 class="blue-text text-center">{{ message }}</h1>
-        <div class="card-deck">
-            <div class="card border border-primary" style="width: 18rem;">
-                <div class="card-header">
-                    {{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].tag | capitalizeWords}}
-                    {{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].name | capitalizeWords}}
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <img src="DRY_EYE.png" alt="dry eye" class="img-responsive float-left">
-                    <h6 class="card-subtitle mb-2 text-muted">{{ text }}</h6>
-                    <p class="card-text">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.val}}</p>
+
+                <div class="col">
+                    <div class="card blueCard">
+                        <div class="card-header blueCardHeader rounded-0">
+                            <div class="float-left pTag">{{jsonData.results[0].DRY_EYE_LIQUID_AUTOSHIPS.product[0].tag |
+                                capitalizeWords}}</div>
+                            <div class="pName text-center">{{jsonData.results[0].DRY_EYE_LIQUID_AUTOSHIPS.product[0].name |
+                                capitalizeWords}}</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="media">
+                                <img class="img-fluid" src="DRY_EYE_LIQUID.png" alt="Dry Eye Liquid">
+                                <div class="media-body">
+                                  <h6 class="mt-0">{{ text }}</h6>
+                                  <p class="card-text">{{jsonData.results[0].DRY_EYE_LIQUID_AUTOSHIPS.val}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="col">
+                    <div class="card orangeCard">
+                        <div class="card-header orangeCardHeader rounded-0">                            
+                            <div class="pTag text-center">{{jsonData.results[0].NURETIN_AUTOSHIPS.product[0].name}}</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="media">
+                                <img class="img-fluid" src="NURETIN.png" alt="">
+                                <div class="media-body">
+                                  <h5 class="mt-0">{{ text }}</h5>
+                                  <p class="card-text">{{jsonData.results[0].NURETIN_AUTOSHIPS.val}}</p>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card purpleCard">
+                        <div class="card-header purpleCardHeader rounded-0">                            
+                            <div class="pTag text-center">{{jsonData.results[0].EYE_OMEGA_AUTOSHIPS.product[0].name}}</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="media">
+                                <img class="img-fluid" src="EYE_OMEGA.png" alt="">
+                                <div class="media-body">
+                                  <h5 class="mt-0">{{ text }}</h5>
+                                  <p class="card-text">{{jsonData.results[0].EYE_OMEGA_AUTOSHIPS.val}}</p>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card cyanCard">
+                        <div class="card-header cyanCardHeader rounded-0">                            
+                            <div class="pTag text-center">{{jsonData.results[0].NURETIN_AUTOSHIPS.product[0].name}}</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="media">
+                                <img class="img-fluid" src="NURETIN.png" alt="">
+                                <div class="media-body">
+                                  <h5 class="mt-0">{{ text }}</h5>
+                                  <p class="card-text">{{jsonData.results[0].DRY_EYE_LIQUID_AUTOSHIPS.val}}</p>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+                
+
             </div>
         </div>
-    </div>
-
+    </section>
     <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
     <script>
-       var app = angular.module('app', []);
-            app.controller("PrimaryCtrl", function ($scope) {
-                $scope.message = "Welcome Shivani!";
-                $scope.text = "# OF PATIENTS ENROLLED";
-                $scope.jsonData = { "count": 1, "results": [{ "id": null, "type": null, "DRY_EYE_AUTOSHIPS": { "val": "42", "product": [{ "name": "dry eye omega benefits", "tag": "de3" }] }, "DRY_EYE_LIQUID_AUTOSHIPS": { "val": "13", "product": [{ "name": "dry eye omega benefits liquid", "tag": "de" }] }, "NURETIN_AUTOSHIPS": { "val": "21", "product": [{ "name": "nuretin", "tag": "" }] }, "EYE_OMEGA_AUTOSHIPS": { "val": "19", "product": [{ "name": "eye omega advantage", "tag": "eo" }] }, "MACULAR_VITAMIN_AUTOSHIPS": { "val": "8", "product": [{ "name": "macular vitamin benefits", "tag": "mv" }] }, "OTHER_PRODUCT_AUTOSHIPS": { "val": "4", "product": [{ "name": "other", "tag": "" }] } }], "success": true };
+        var app = angular.module('app', []);
+        app.controller("PrimaryCtrl", function ($scope) {
+            $scope.message = "Welcome Shivani!";
+            $scope.text = "# OF PATIENTS ENROLLED";
+            $scope.jsonData = { "count": 1, "results": [{ "id": null, "type": null, "DRY_EYE_AUTOSHIPS": { "val": "42", "product": [{ "name": "dry eye omega benefits", "tag": "de3" }] }, "DRY_EYE_LIQUID_AUTOSHIPS": { "val": "13", "product": [{ "name": "dry eye omega benefits liquid", "tag": "de" }] }, "NURETIN_AUTOSHIPS": { "val": "21", "product": [{ "name": "nuretin", "tag": "" }] }, "EYE_OMEGA_AUTOSHIPS": { "val": "19", "product": [{ "name": "eye omega advantage", "tag": "eo" }] }, "MACULAR_VITAMIN_AUTOSHIPS": { "val": "8", "product": [{ "name": "macular vitamin benefits", "tag": "mv" }] }, "OTHER_PRODUCT_AUTOSHIPS": { "val": "4", "product": [{ "name": "other", "tag": "" }] } }], "success": true };
 
-            });
+        });
 
-            app.filter('capitalizeWords', function () {
-                return function (string) {
-                    return string.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });                }
-            });
+        app.filter('capitalizeWords', function () {
+            return function (string) {
+                return string.replace(/(?:^|\s)\S/g, function (a) { return a.toUpperCase(); });
+            }
+        });
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
