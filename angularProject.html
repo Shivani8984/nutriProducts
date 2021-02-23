@@ -18,11 +18,13 @@
                 src: url(Gotham-Bold.otf);
                 font-weight: bold;
             }
+
             @font-face {
                 font-family: 'GothamBook';
                 src: url(Gotham-Book.otf);
                 font-weight: normal;
             }
+
             @font-face {
                 font-family: 'GothamMedium';
                 src: url(Gotham-Medium.otf);
@@ -30,7 +32,7 @@
             }
 
             body {
-                font-family: 'Gotham';
+                font-family: 'GothamBook';
             }
 
             .blue-text {
@@ -41,7 +43,8 @@
         <div class="card-deck">
             <div class="card border border-primary" style="width: 18rem;">
                 <div class="card-header">
-                    {{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].name | uppercase}}
+                    {{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].tag | capitalizeWords}}
+                    {{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].name | capitalizeWords}}
                 </div>
                 <div class="card-body">
                     <img src="DRY_EYE.png" alt="dry eye" class="img-responsive float-left">
@@ -54,12 +57,18 @@
 
     <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
     <script>
-        angular.module("app", []).controller("PrimaryCtrl", function ($scope) {
-            $scope.message = "Welcome Shivani!";
-            $scope.text = "# OF PATIENTS ENROLLED";
-            $scope.jsonData = { "count": 1, "results": [{ "id": null, "type": null, "DRY_EYE_AUTOSHIPS": { "val": "42", "product": [{ "name": "dry eye omega benefits", "tag": "de3" }] }, "DRY_EYE_LIQUID_AUTOSHIPS": { "val": "13", "product": [{ "name": "dry eye omega benefits liquid", "tag": "de" }] }, "NURETIN_AUTOSHIPS": { "val": "21", "product": [{ "name": "nuretin", "tag": "" }] }, "EYE_OMEGA_AUTOSHIPS": { "val": "19", "product": [{ "name": "eye omega advantage", "tag": "eo" }] }, "MACULAR_VITAMIN_AUTOSHIPS": { "val": "8", "product": [{ "name": "macular vitamin benefits", "tag": "mv" }] }, "OTHER_PRODUCT_AUTOSHIPS": { "val": "4", "product": [{ "name": "other", "tag": "" }] } }], "success": true };
+       var app = angular.module('app', []);
+            app.controller("PrimaryCtrl", function ($scope) {
+                $scope.message = "Welcome Shivani!";
+                $scope.text = "# OF PATIENTS ENROLLED";
+                $scope.jsonData = { "count": 1, "results": [{ "id": null, "type": null, "DRY_EYE_AUTOSHIPS": { "val": "42", "product": [{ "name": "dry eye omega benefits", "tag": "de3" }] }, "DRY_EYE_LIQUID_AUTOSHIPS": { "val": "13", "product": [{ "name": "dry eye omega benefits liquid", "tag": "de" }] }, "NURETIN_AUTOSHIPS": { "val": "21", "product": [{ "name": "nuretin", "tag": "" }] }, "EYE_OMEGA_AUTOSHIPS": { "val": "19", "product": [{ "name": "eye omega advantage", "tag": "eo" }] }, "MACULAR_VITAMIN_AUTOSHIPS": { "val": "8", "product": [{ "name": "macular vitamin benefits", "tag": "mv" }] }, "OTHER_PRODUCT_AUTOSHIPS": { "val": "4", "product": [{ "name": "other", "tag": "" }] } }], "success": true };
 
-        });
+            });
+
+            app.filter('capitalizeWords', function () {
+                return function (string) {
+                    return string.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });                }
+            });
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
