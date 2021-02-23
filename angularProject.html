@@ -38,6 +38,10 @@
             margin-right: -50%;
             transform: translate(-50%, -50%)
         }
+        .card-header{
+            min-height: 100px;
+            border-bottom: none;
+        }
         .blueCard {
             border-color: #55C7F1;
             border-radius: 0mm;
@@ -46,6 +50,7 @@
         .blueCardHeader {
             color : white !important;
             background-color:#55C7F1 ;
+            text-align:left;
         }
         .orangeCard {
             border-color:#D97953;
@@ -84,6 +89,7 @@
             font-size: 20px;
             text-align:left;
             text-overflow: ellipsis;
+            margin-left: 5px;
         }
 
         .card-body {
@@ -112,7 +118,7 @@
                         <div class="card-header blueCardHeader rounded-0">
                             <div class="float-left pTag">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].tag |
                                 capitalizeWords}}</div>
-                            <div class="pName text-center">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].name |
+                            <div class="pName">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].name |
                                 capitalizeWords}}</div>
                         </div>
                         <div class="card-body">
@@ -121,6 +127,7 @@
                                 <img class="img-fluid" src="DRY_EYE.png" alt="Dry Eye">
                                 <div class="media-body">
                                   <h6 class="mt-0">{{ text }}</h6>
+                                  <hr>
                                   <p class="card-text">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.val}}</p>
                                 </div>
                             </div>
@@ -134,7 +141,7 @@
                         <div class="card-header blueCardHeader rounded-0">
                             <div class="float-left pTag">{{jsonData.results[0].DRY_EYE_LIQUID_AUTOSHIPS.product[0].tag |
                                 capitalizeWords}}</div>
-                            <div class="pName text-center">{{jsonData.results[0].DRY_EYE_LIQUID_AUTOSHIPS.product[0].name |
+                            <div class="pName">{{jsonData.results[0].DRY_EYE_LIQUID_AUTOSHIPS.product[0].name |
                                 capitalizeWords}}</div>
                         </div>
                         <div class="card-body">
@@ -167,7 +174,7 @@
                 <div class="col">
                     <div class="card purpleCard">
                         <div class="card-header purpleCardHeader rounded-0">                            
-                            <div class="pTag text-center">{{jsonData.results[0].EYE_OMEGA_AUTOSHIPS.product[0].name}}</div>
+                            <div class="text-center">{{jsonData.results[0].EYE_OMEGA_AUTOSHIPS.product[0].name | capitalizeWords}}</div>
                         </div>
                         <div class="card-body">
                             <div class="media">
@@ -183,14 +190,14 @@
                 <div class="col">
                     <div class="card cyanCard">
                         <div class="card-header cyanCardHeader rounded-0">                            
-                            <div class="pTag text-center">{{jsonData.results[0].NURETIN_AUTOSHIPS.product[0].name}}</div>
+                            <div class="text-center">{{jsonData.results[0].MACULAR_VITAMIN_AUTOSHIPS.product[0].name | capitalizeWords}}</div>
                         </div>
                         <div class="card-body">
                             <div class="media">
-                                <img class="img-fluid" src="NURETIN.png" alt="">
+                                <img class="img-fluid" src="MACULAR_VITAMIN.png" alt="">
                                 <div class="media-body">
                                   <h5 class="mt-0">{{ text }}</h5>
-                                  <p class="card-text">{{jsonData.results[0].DRY_EYE_LIQUID_AUTOSHIPS.val}}</p>
+                                  <p class="card-text">{{jsonData.results[0].MACULAR_VITAMIN_AUTOSHIPS.val}}</p>
                                 </div>
                             </div>                            
                         </div>
