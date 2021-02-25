@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'GothamBold';
+    src: url(Gotham-Bold.otf);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'GothamBook';
+    src: url(Gotham-Book.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'GothamMedium';
+    src: url(Gotham-Medium.otf);
+    font-weight: 400;
+}
+
+body {
+    font-family: 'GothamBook';
+}
+
+section {
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.blueCard {
+   margin-right: 15px;
+   margin-bottom: 15px;  
+   border: 4px solid #55C7F1;         
+}
+
+.blueCardHeader {
+    color: white !important;
+    background-color: #55C7F1;
+}
+
+.orangeCard {
+    border-color: #D97953;
+    border-radius: 0mm;
+    border-width: thick;
+}
+
+.orangeCardHeader {
+    color: white !important;
+    background-color: #D97953;
+}
+
+.purpleCard {
+    border-color: #A683B8;
+    border-radius: 0mm;
+    border-width: thick;
+}
+
+.purpleCardHeader {
+    color: white !important;
+    background-color: #A683B8;
+}
+
+.cyanCard {
+    border-color: #65C1AE;
+    border-radius: 0mm;
+    border-width: thick;
+}
+
+.cyanCardHeader {
+    color: white !important;
+    background-color: #65C1AE;
+}
+
+.pTag {
+    font-family: 'GothamBold';
+    font-size: 3rem;
+}
+
+.pName {
+    font-family: 'GothamBook';
+    font-size: 1rem;
+    word-wrap: break-word;
+}
+.card-text {
+    color: #07b5f5;
+    font-family: 'GothamMedium';
+    font-size: 5rem;            
+}

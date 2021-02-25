@@ -3,101 +3,12 @@
 
 <head>
     <meta charset="utf 8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
     <title>PRN</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <style>
-        @font-face {
-            font-family: 'GothamBold';
-            src: url(Gotham-Bold.otf);
-            font-weight: 900;
-        }
-
-        @font-face {
-            font-family: 'GothamBook';
-            src: url(Gotham-Book.otf);
-            font-weight: normal;
-        }
-
-        @font-face {
-            font-family: 'GothamMedium';
-            src: url(Gotham-Medium.otf);
-            font-weight: 400;
-        }
-
-        body {
-            font-family: 'GothamBook';
-        }
-
-        section {
-            padding: 1em;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%)
-        }
-
-        .blueCard {
-           margin-right: 15px;  
-           border: 4px solid #55C7F1;         
-        }
-
-        .blueCardHeader {
-            color: white !important;
-            background-color: #55C7F1;
-        }
-
-        .orangeCard {
-            border-color: #D97953;
-            border-radius: 0mm;
-            border-width: thick;
-        }
-
-        .orangeCardHeader {
-            color: white !important;
-            background-color: #D97953;
-        }
-
-        .purpleCard {
-            border-color: #A683B8;
-            border-radius: 0mm;
-            border-width: thick;
-        }
-
-        .purpleCardHeader {
-            color: white !important;
-            background-color: #A683B8;
-        }
-
-        .cyanCard {
-            border-color: #65C1AE;
-            border-radius: 0mm;
-            border-width: thick;
-        }
-
-        .cyanCardHeader {
-            color: white !important;
-            background-color: #65C1AE;
-        }
-
-        .pTag {
-            font-family: 'GothamBold';
-            font-size: 3rem;
-        }
-
-        .pName {
-            font-family: 'GothamBook';
-            font-size: 1rem;
-            word-wrap: break-word;
-        }
-        .card-text {
-            color: #07b5f5;
-            font-family: 'GothamMedium';
-            font-size: 5rem;            
-        }
-    </style>
 </head>
 
 <body ng-app="app">
@@ -105,9 +16,9 @@
     <section>
         <div class="container-fluid" ng-controller="PrimaryCtrl">
             <!--PrimaryCtrl=controller ng-controller=define the controller scope-->
-            <div class="row row-content align-items-center">
+            <div class="row">
 
-                <div class="col blueCard">
+                <div class="col-md-4 col-lg blueCard">
                     <div class="row blueCardHeader">
                         <div class="col pTag">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].tag |
                             capitalizeWords}}</div>
@@ -115,7 +26,8 @@
                             capitalizeWords}}</div>
                     </div>
                     <div class="row">
-                        <div class="col justify-content-center"><img class="img-fluid" src="DRY_EYE.png" alt="Dry Eye"></div>
+                        <div class="col justify-content-center"><img class="img-fluid" src="DRY_EYE.png" alt="Dry Eye">
+                        </div>
                         <div class="col">
                             <p>{{ text }}</p>
                             <hr>
@@ -124,7 +36,7 @@
                     </div>
                 </div>
 
-                <div class="col blueCard">
+                <div class="col-md-4 col-lg blueCard">
                     <div class="row blueCardHeader">
                         <div class="col pTag">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].tag |
                             capitalizeWords}}</div>
@@ -140,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col blueCard">
+                <div class="col-md-4 col-lg blueCard">
                     <div class="row blueCardHeader">
                         <div class="col pTag">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].tag |
                             capitalizeWords}}</div>
@@ -156,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col blueCard">
+                <div class="col-md-4 col-lg blueCard">
                     <div class="row blueCardHeader">
                         <div class="col pTag">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].tag |
                             capitalizeWords}}</div>
@@ -172,7 +84,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col blueCard">
+
+                <div class="col-md-4 col-lg blueCard">
                     <div class="row blueCardHeader">
                         <div class="col pTag">{{jsonData.results[0].DRY_EYE_AUTOSHIPS.product[0].tag |
                             capitalizeWords}}</div>
