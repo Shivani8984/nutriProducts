@@ -27,9 +27,9 @@ body, html {
 }
 
 .card {   
-    margin-bottom: 15px;
     border: 4px solid; 
     border-radius:0%; 
+    height: 100%;
 }
 
 .CardHeader {
